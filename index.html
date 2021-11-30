@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Blog post</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <style type="text/css" rel="stylesheet">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Slabo 27px', serif;
+            font-family: 'Roboto', sans-serif;
+            background: #000;
+        }
+
+        .bg {
+            position: relative;
+            z-index: 1;
+        }
+
+        .bg img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .bg h1 {
+            position: absolute;
+            top: 33%;
+            left: 0;
+            width: 100%;
+            font-size: 100px;
+            text-align: center;
+        }
+
+        .cont {
+            position: relative;
+            z-index: 2;
+            background: rgba(0, 0, 0, 0.9);
+            font-size: 27px;
+            color: #fff;
+            padding: 5%;
+        }
+
+        .cont * {
+            max-width: 900px;
+            margin: 5% auto;
+        }
+
+        h1 {
+            color: white;
+        }
+
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script>
+        $(document).ready(function() {
+            var $window = $(window);
+
+            function scroll_elements() {
+                var scroll = $window.scrollTop();
+                var scrollLayer1 = scroll / 1.4;
+                var scrollLayer2 = scroll / 1.2;
+
+                $(".layer1").css(
+                    "-webkit-transform", "translate3d(0," + scrollLayer1 + "px,0)",
+                    "transform", "translate3d(0," + scrollLayer1 + "px,0)"
+                );
+                $(".layer2").css(
+                    "-webkit-transform", "translate3d(0," + scrollLayer2 + "px,0)",
+                    "transform", "translate3d(0," + scrollLayer2 + "px,0)"
+                );
+            }
+
+            $window.scroll(scroll_elements);
+        });
+
+    </script>
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="bg">
+            <img class="layer2" src="https://w.wallhaven.cc/full/4d/wallhaven-4drp13.jpg" alt="" />
+            <h1 class="layer1">Working in academia or industry?</h1>
+
+        </div>
+        <div class="cont">
+            <small>Blog post by Zachman Roxana</small>
+            <h2>Working in academia or industry?</h2>
+            <p>Whether you are a student getting a bachelor’s degree, master’s degree, already working in industry or academia, you probably wondered about the path your career is taking, so I’m writing this article to help you find out what would be the best option for you.</p>
+            <p>There’s no right or wrong when talking about careers, it’s about doing what you love and what gives you the most satisfaction. However, certain advantages and disadvantages are depending on what you choose.</p>
+            <h2>Working in academia</h2>
+            <p>If you like working at your own pace, having a flexible schedule and going deep into learning and researching a particular topic you like, and are being passionate about teaching others, then academia might be the right choice for you – but be careful – this implies earning much less money and less stability because you don’t know whether what you are researching at the moment will flourish into something big or turn to a dead end.</p>
+            <h2>Working in industry</h2>
+            <p>If you want stability, earning money, and feel like a structured schedule and being managed would be an appropriate fit for you, then working in the industry is what you want. Even if you don’t like working 9 to 5, you can still find remote jobs that will give you the flexibility you want while also benefitting financially and from stability, but keep in mind that you might not like what you do, since you’ll have a boss telling you what to do.
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
